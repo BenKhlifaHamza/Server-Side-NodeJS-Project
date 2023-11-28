@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firs Project</title>
+        <!-- ***** Import Links Css BootStrap ***** -->
+        <%-include('links/bootstrapcsslinks.ejs')%>
+        <!-- *************************************** -->
+</head>
+<body>
+
+    <div class="nav"><!-- ***** Preloader Start ***** -->
+        <%-include('components/load.ejs')%>
+        <!-- ***** Preloader End ***** -->
+    
+        <!--Start Header -->
+        <%-include('components/top.ejs')%>
+        <!--End Header --></div>
+<br><br><br><br>
+
+<div class="container">
+    <div class="row g-0 text-start">
+    <div class="col col-md-4">
+      
+      <img src="/books/<%= book.image %>" style="height: 500px; width: 400px; padding: 5px;" alt="">
+      
+  </div>
+    <div class="col col-md-6 ml-5">
+      <h4><%= book.title %></h4>
+         <p><%= book.description %></p>    
+      <h6>Author   : <%= book.author %></h6>
+      <h6>Genre    : <%= book.genre %></h6>
+      <h6>Year     : <%= book.year %></h6>
+
+
+       <h5> <i class="fa fa-star" style="margin-right: 5px;"></i><%= book.rating %></h5>
+
+      <h2 style="color: goldenrod;">$<%= book.price %></h2>
+    </div>
+  </div>
+  </div>
+
+    <%-include('components/bottom.ejs')%>
+</body>
+</html>

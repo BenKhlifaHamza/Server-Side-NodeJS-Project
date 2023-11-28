@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firs Project</title>
+    <!-- ***** Import Links Css BootStrap ***** -->
+    <%-include('links/bootstrapcsslinks.ejs')%>
+  </head>
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <%-include('components/load.ejs')%>
+    <!-- ***** Preloader End ***** -->
+
+    <!--Start Header -->
+    <%-include('components/top.ejs')%>
+    <!--End Header -->
+
+    <div class="container">
+      <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          />
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img
+                src="images/services-bg.jpg"
+                class="img-fluid rounded mt-5"
+                alt="1"
+              />
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mt-5">
+              <form method="POST" action="/signup" class="mt-5">
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example3"
+                    class="form-control form-control-lg"
+                    placeholder="Enter a Username"
+                    name="userName"
+                  />
+                  <label class="form-label" for="form3Example3">Username</label>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form3Example3"
+                    class="form-control form-control-lg"
+                    placeholder="Enter a valid email address"
+                    name="email"
+                  />
+                  <label class="form-label" for="form3Example3"
+                    >Email address</label
+                  >
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <input
+                    type="password"
+                    id="form3Example4"
+                    class="form-control form-control-lg"
+                    placeholder="Enter password"
+                    name="password"
+                  />
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
+                <%if(msgErr){%>
+                <div class="alert alert-danger" role="alert">
+                  <%= msgErr %>
+                </div>
+                <% } %>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button
+                    type="submit"
+                    class="btn btn-dark btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem"
+                  >
+                    Sign Up
+                  </button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">
+                    Do you have an account?
+                    <a href="/login" style="color: #61fff2">Login</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Footer And JavaScript Files-->
+        <%-include('components/bottom.ejs')%>
+      </section>
+    </div>
+  </body>
+</html>

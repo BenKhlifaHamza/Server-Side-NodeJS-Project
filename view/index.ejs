@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First Project</title>
+    <!-- ***** Import Links Css BootStrap ***** -->
+    <%-include('links/bootstrapcsslinks.ejs')%>
+    <!-- *************************************** -->
+</head>
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <%-include('components/load.ejs')%>
+    <!-- ***** Preloader End ***** -->
+
+    <!--Start Header -->
+    <%-include('components/top.ejs')%>
+    <!--End Header -->
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h4>Best Offer</h4>
+            <h2>New Arrivals On Sale</h2>
+          </div>
+        </div>
+        <div class="banner-item-02">
+          <div class="text-content">
+            <h4>Flash Deals</h4>
+            <h2>Get your best products</h2>
+          </div>
+        </div>
+        <div class="banner-item-03">
+          <div class="text-content">
+            <h4>Last Minute</h4>
+            <h2>Grab last minute deals</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="latest-products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Latest Products</h2>
+              <a href="/products">view all products <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <% for(let book of books) {%>
+  
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="/products/<%= book._id %>/" target="_blank"><div class="container">
+                  <img src="books/<%= book.image %> " style=" height: 300px;" alt="" />
+                </div></a>
+                <div class="down-content">
+                  <a href="/products/<%= book._id %>/" target="_blank"><h4><%= book.title %></h4></a>
+                  <h6>$<%= book.price %></h6>
+          <br>
+          <br>
+          <h5>Author : <%= book.author %></h5>
+          <h5>Genre  : <%= book.genre %></h5>
+          <h5>Year   : <%= book.year %></h5>
+          
+          <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (24)</span>
+                </div>
+              </div>
+            </div>
+          
+          <% } %>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="best-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>About Easy Education</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>Looking for the best products?</h4>
+              <p><a rel="nofollow" href="https://www.facebook.com/profile.php?id=100094889319656" target="_parent">This template</a> is free to use for your business websites. However, you have no permission to redistribute the downloadable ZIP file on any template collection website. <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100094889319656">Contact us</a> for more info.</p>
+              <ul class="featured-list">
+                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="#">Consectetur an adipisicing elit</a></li>
+                <li><a href="#">It aquecorporis nulla aspernatur</a></li>
+                <li><a href="#">Corporis, omnis doloremque</a></li>
+                <li><a href="#">Non cum id reprehenderit</a></li>
+              </ul>
+              <a href="about.html" class="filled-button">Read More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="images/feature-image.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4>Creative &amp; Unique <em>Easy Education</em></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
+                </div>
+                <div class="col-md-4">
+                  <a href="#" class="filled-button">Purchase Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Footer And JavaScript Files-->
+    <%-include('components/bottom.ejs')%>
+</body>
+</html>

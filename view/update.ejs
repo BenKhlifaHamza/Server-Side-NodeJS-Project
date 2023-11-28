@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firs Project</title>
+        <!-- ***** Import Links Css BootStrap ***** -->
+        <%-include('links/bootstrapcsslinks.ejs')%>
+        <!-- *************************************** -->
+</head>
+<body>
+        <!-- ***** Preloader Start ***** -->
+        <%-include('components/load.ejs')%>
+        <!-- ***** Preloader End ***** -->
+    
+        <!--Start Header -->
+        <%-include('components/top.ejs')%>
+        <!--End Header -->
+<br>
+        <div class="container">
+            <h1 class="text-center mb-4">Add a Book</h1>
+            <form action="/mybooks/update/<%= book._id %>" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input value="<%= book.title %>" type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input value="<%= book.author %>" type="text" class="form-control" id="author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre:</label>
+                    <input value="<%= book.genre %>" type="text" class="form-control" id="genre" name="genre" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input value="<%= book.year %>" type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <input value="<%= book.rating %>" type="number" class="form-control" id="rating" name="rating" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input value="<%= book.price %>" type="number" class="form-control" id="price" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image:</label><br>
+                    <img src="/books/<%= book.image %>" style="height: 100px; width: 100px; padding: 5px;" alt="">
+                    <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                </div> 
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description" name="description" rows="4" required><%= book.description %></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">update Book</button>
+                </div>
+            </form>
+        </div>
+
+
+
+        <!-- Footer And JavaScript Files-->
+        <%-include('components/bottom.ejs')%>
+    
+</body>
+</html>
